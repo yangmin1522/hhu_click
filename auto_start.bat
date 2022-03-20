@@ -1,0 +1,1 @@
+start D:\Program" "Files" "(x86)\hhu_dk\HHU_dailyreport_3.0slow.exe
