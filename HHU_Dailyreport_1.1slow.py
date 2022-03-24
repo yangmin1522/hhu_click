@@ -107,6 +107,9 @@ def auto_click(n):
         pwd = Pwd[i]
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        options.add_argument('--no-sandbox')
+        options.add_argument('blink-settings=imagesEnabled=false')
+        options.add_argument('--disable-gpu')
         s = Service('chromedriver.exe')
         driver = webdriver.Chrome(options=options, service=s)
         driver.get('http://dailyreport.hhu.edu.cn/pdc/form/list')
@@ -123,6 +126,7 @@ def auto_click(n):
         button2 = driver.find_element(By.ID, 'saveBtn')
         button2.click()
         time.sleep(2)
+        print('完成第', i+1, '个')
         driver.close()
 
 
